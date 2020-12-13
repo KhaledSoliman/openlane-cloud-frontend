@@ -14,7 +14,7 @@ class API {
   }
 
   async getJobs() {
-    return this.axios.get('/jobs', {
+    return this.axios.get('/v1/job', {
       headers: {
         'Authorization': this.token
       }
@@ -24,10 +24,7 @@ class API {
   }
 
   async getJob(jobId) {
-    return this.axios.get('/jobs', {
-      params: {
-        jobId: jobId
-      },
+    return this.axios.get(`/v1/job/${jobId}/`, {
       headers: {
         'Authorization': this.token
       }
@@ -37,10 +34,7 @@ class API {
   }
 
   async getReport(jobId) {
-    return this.axios.get('/jobs/report', {
-      params: {
-        jobId: jobId
-      },
+    return this.axios.get(`/v1/job/${jobId}/report`, {
       headers: {
         'Authorization': this.token
       }
@@ -50,7 +44,7 @@ class API {
   }
 
   async postJob(values) {
-    return this.axios.post('/jobs', {
+    return this.axios.post('/v1/job', {
       job: values
     }, {
       headers: {
@@ -62,10 +56,7 @@ class API {
   }
 
   async quitJob(jobId) {
-    return this.axios.post('/jobs/quit', {
-      job: {
-        jobId: jobId
-      }
+    return this.axios.post(`/v1/job/${jobId}/cancel`, {
     }, {
       headers: {
         'Authorization': this.token
@@ -76,10 +67,7 @@ class API {
   }
 
   async deleteJob(jobId) {
-    return this.axios.post('/jobs/delete', {
-      job: {
-        jobId: jobId
-      }
+    return this.axios.post(`/v1/job/${jobId}/delete`, {
     }, {
       headers: {
         'Authorization': this.token
@@ -90,13 +78,9 @@ class API {
   }
 
   async downloadJobResult(jobId, runName) {
-    return this.axios.get('/download', {
+    return this.axios.get(`/v1/job/${jobId}/${runName}/download`, {
       headers: {
         'Authorization': this.token
-      },
-      params: {
-        runName: runName,
-        jobId: jobId
       },
       responseType: 'blob' // important
     }).then((response) => {
