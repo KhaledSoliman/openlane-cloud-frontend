@@ -5,7 +5,7 @@ import { hostname, port } from './config';
 class API {
   constructor() {
     this.axios = axios.create({
-      baseURL: `http://${hostname}:${port}`
+      baseURL: `https://${hostname}:${port}`
     });
   }
 

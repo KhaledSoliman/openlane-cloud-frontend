@@ -1,2 +1,2 @@
-export const hostname = "localhost";
-export const port = "3030";
+export const hostname = "cloud.openlane.io";
+export const port = "3031";
