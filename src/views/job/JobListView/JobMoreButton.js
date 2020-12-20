@@ -47,7 +47,7 @@ const JobMoreButton = ({ job, ...rest }) => {
       await user.firebaseUser.getIdToken().then((idToken) => {
         api.setToken(idToken);
       });
-      await api.quitJob(job.jobId).then((res) => {
+      await api.quitJob(job.id).then((res) => {
         console.log(res);
       });
     } catch (err) {
@@ -60,7 +60,7 @@ const JobMoreButton = ({ job, ...rest }) => {
       await user.firebaseUser.getIdToken().then((idToken) => {
         api.setToken(idToken);
       });
-      await api.deleteJob(job.jobId).then((res) => {
+      await api.deleteJob(job.id).then((res) => {
         console.log(res);
       });
     } catch (err) {
@@ -91,7 +91,7 @@ const JobMoreButton = ({ job, ...rest }) => {
       >
         <MenuItem
           component={RouterLink}
-          to={`${location.pathname}/${job.jobId}/details`}
+          to={`${location.pathname}/${job.id}/details`}
           onClick={() => {
           }}>
           <ListItemIcon>

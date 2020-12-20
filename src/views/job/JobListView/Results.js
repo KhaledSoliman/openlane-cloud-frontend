@@ -44,9 +44,9 @@ export const jobFields = [
       return <Link
         variant="subtitle1"
         color="secondary"
-        to={`${job.jobId}/details`}
+        to={`${job.id}/details`}
       >
-        {job.jobId}
+        {job.id}
       </Link>;
     }
   },

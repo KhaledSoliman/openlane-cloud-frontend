@@ -71,7 +71,7 @@ const Reports = ({ className, job, report, ...rest }) => {
           </Hidden>
           <PDFDownloadLink
             document={<ReportsPDF job={job} report={report}/>}
-            fileName={`${job.jobId}-${job.designName}-report`}
+            fileName={`${job.id}-${job.designName}-report`}
             style={{ textDecoration: 'none' }}
           >
             <Button

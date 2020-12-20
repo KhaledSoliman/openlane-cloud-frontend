@@ -58,7 +58,7 @@ const JobMoreButton = ({job, ...rest}) => {
       >
         <MenuItem
           component={RouterLink}
-          to={`/${job.jobId}`}
+          to={`/${job.id}`}
           onClick={() => {
           }}>
           <ListItemIcon>
@@ -90,7 +90,7 @@ const JobMoreButton = ({job, ...rest}) => {
         <MenuItem
           disabled={job.status !== 'completed'}
           onClick={() => {
-            //props.downloadJobResult(job.jobId);
+            //props.downloadJobResult(job.id);
           }}>
           <ListItemIcon>
             <GetAppIcon
@@ -106,7 +106,7 @@ const JobMoreButton = ({job, ...rest}) => {
         <MenuItem
           disabled={job.status !== 'completed' && job.status !== 'stopped'}
           onClick={() => {
-            //props.onDelete(job.jobId);
+            //props.onDelete(job.id);
           }}>
           <ListItemIcon>
             <DeleteIcon

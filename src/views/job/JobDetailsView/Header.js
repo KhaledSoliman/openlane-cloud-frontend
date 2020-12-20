@@ -43,7 +43,7 @@ const Header = ({ className, job, ...rest }) => {
       await user.firebaseUser.getIdToken().then((idToken) => {
         api.setToken(idToken);
       });
-      await api.quitJob(job.jobId).then((res) => {
+      await api.quitJob(job.id).then((res) => {
         console.log(res);
       });
     } catch (err) {
@@ -56,7 +56,7 @@ const Header = ({ className, job, ...rest }) => {
       await user.firebaseUser.getIdToken().then((idToken) => {
         api.setToken(idToken);
       });
-      await api.deleteJob(job.jobId).then((res) => {
+      await api.deleteJob(job.id).then((res) => {
         console.log(res);
       });
     } catch (err) {

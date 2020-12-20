@@ -115,7 +115,7 @@ const ReportsPDF = ({ job, report }) => {
             </Text>
             <Text style={styles.h5}>
               Job #
-              {job.jobId}
+              {job.id}
             </Text>
           </View>
         </View>
@@ -141,7 +141,7 @@ const ReportsPDF = ({ job, report }) => {
               Job Number
             </Text>
             <Text style={styles.body1}>
-              {job.jobId}
+              {job.id}
             </Text>
           </View>
         </View>
